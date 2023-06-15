@@ -17,7 +17,7 @@ tag-name = "{{version}}"
 
 [lib]
 name = "xrpl"
-crate-type = ["lib"]
+crate-type = ["lib","cdylib","staticlib"]
 proc-macro = true
 
 [dependencies]
@@ -59,6 +59,11 @@ fnv = { version = "1.0.7", default-features = false }
 derive-new = { version = "0.5.9", default-features = false }
 thiserror-no-std = "2.0.2"
 anyhow = { version ="1.0.69", default-features = false }
+uniffi = { version = "0.23.0" }
+
+[build-dependencies]
+uniffi = { version = "0.23.0", features = [ "build" ] }
+
 
 [dev-dependencies]
 criterion = "0.4.0"
